@@ -9,7 +9,14 @@
     <title>Document</title>
 </head>
 <body>
-<button><a href="/exams">Quản lý bài thi</a></button>
-<button><a href="/home">Trang chủ</a></button>
+<c:if test="${not empty message}">
+    <script>
+        alert("${message}")
+    </script>
+</c:if>
+    <h2>Xin chúc mừng bạn đã vượt qua bài thi</h2>
+    <h3>Bạn đã trả lời đúng ${trueAnswer}/${totalQuestion} câu hỏi</h3>
+    <h3>Và trả lời sai ${falseAnswer}/${totalQuestion} câu hỏi</h3>
+<button><a href="/home">Quay la trang chủ</a></button>
 </body>
 </html>

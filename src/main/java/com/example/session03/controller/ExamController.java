@@ -24,7 +24,7 @@ public class ExamController {
     @GetMapping
     public String listExams(Model model, @RequestParam(name = "page",defaultValue = "0") int page,
                             @RequestParam(name = "size",defaultValue = "5") int size) {
-        Page<Exam> examPage = examService.findAll(PageRequest.of(page, size));
+        Page<Exam> examPage = examService.findAll(PageRequest.of(page, size),"");
         List<Integer> pages = new ArrayList<>();
         for (int i = 1 ; i <= examPage.getTotalPages(); i++ ) {
             pages.add(i);

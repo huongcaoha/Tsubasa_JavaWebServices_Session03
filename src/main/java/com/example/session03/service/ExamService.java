@@ -13,8 +13,8 @@ public class ExamService {
     @Autowired
     private ExamRepository examRepository;
 
-    public Page<Exam> findAll(Pageable pageable) {
-        return examRepository.findAll(pageable);
+    public Page<Exam> findAll(Pageable pageable,String search) {
+        return examRepository.findAllAndSearch(pageable,search);
     }
 
     public Exam save(ExamDTO examDTO) {
